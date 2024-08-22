@@ -77,9 +77,9 @@ resource "aws_route_table" "private_internet_access_1c" {
 resource "aws_route" "private_access_1c" {
   route_table_id = aws_route_table.private_internet_access_1c.id
 
-  destination_cidr_block = "0.0.0.0/0" // all outbound traffic
+  destination_cidr_block = "0.0.0.0/0"
 
-  gateway_id = aws_nat_gateway.nat_1c.id // send to internet gateway
+  gateway_id = aws_nat_gateway.nat_1c.id
 }
 
 resource "aws_route_table_association" "private_1a" {
